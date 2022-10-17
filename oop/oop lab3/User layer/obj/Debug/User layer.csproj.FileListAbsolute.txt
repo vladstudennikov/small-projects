@@ -1,0 +1,14 @@
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\bin\Debug\User layer.exe.config
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\bin\Debug\User layer.exe
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\bin\Debug\User layer.pdb
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\bin\Debug\DAL.exe
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\bin\Debug\DAL.pdb
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\bin\Debug\DAL.exe.config
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\obj\Debug\User layer.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\obj\Debug\User layer.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\obj\Debug\User layer.csproj.CopyComplete
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\obj\Debug\User layer.exe
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\obj\Debug\User layer.pdb
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\bin\Debug\BLL.exe
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\bin\Debug\BLL.pdb
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\oop lab 3 v1\User layer\bin\Debug\BLL.exe.config
