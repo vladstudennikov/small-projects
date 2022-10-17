@@ -1,0 +1,7 @@
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\Lab 2 oop\Lab 2 oop\bin\Debug\Lab 2 oop.exe.config
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\Lab 2 oop\Lab 2 oop\bin\Debug\Lab 2 oop.exe
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\Lab 2 oop\Lab 2 oop\bin\Debug\Lab 2 oop.pdb
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\Lab 2 oop\Lab 2 oop\obj\Debug\Lab 2 oop.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\Lab 2 oop\Lab 2 oop\obj\Debug\Lab 2 oop.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\Lab 2 oop\Lab 2 oop\obj\Debug\Lab 2 oop.exe
+C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\Lab 2 oop\Lab 2 oop\obj\Debug\Lab 2 oop.pdb
