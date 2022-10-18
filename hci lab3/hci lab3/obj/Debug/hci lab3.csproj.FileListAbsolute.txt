@@ -1,0 +1,11 @@
+C:\Users\pc\Desktop\ВУЗ\Человеко-компьютерное взаимодействие (1 семестр 2 курс)\hci lab3\hci lab3\bin\Debug\hci lab3.exe.config
+C:\Users\pc\Desktop\ВУЗ\Человеко-компьютерное взаимодействие (1 семестр 2 курс)\hci lab3\hci lab3\bin\Debug\hci lab3.exe
+C:\Users\pc\Desktop\ВУЗ\Человеко-компьютерное взаимодействие (1 семестр 2 курс)\hci lab3\hci lab3\bin\Debug\hci lab3.pdb
+C:\Users\pc\Desktop\ВУЗ\Человеко-компьютерное взаимодействие (1 семестр 2 курс)\hci lab3\hci lab3\obj\Debug\hci lab3.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\ВУЗ\Человеко-компьютерное взаимодействие (1 семестр 2 курс)\hci lab3\hci lab3\obj\Debug\hci_lab3.Form1.resources
+C:\Users\pc\Desktop\ВУЗ\Человеко-компьютерное взаимодействие (1 семестр 2 курс)\hci lab3\hci lab3\obj\Debug\hci_lab3.Properties.Resources.resources
+C:\Users\pc\Desktop\ВУЗ\Человеко-компьютерное взаимодействие (1 семестр 2 курс)\hci lab3\hci lab3\obj\Debug\hci lab3.csproj.GenerateResource.cache
+C:\Users\pc\Desktop\ВУЗ\Человеко-компьютерное взаимодействие (1 семестр 2 курс)\hci lab3\hci lab3\obj\Debug\hci lab3.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\ВУЗ\Человеко-компьютерное взаимодействие (1 семестр 2 курс)\hci lab3\hci lab3\obj\Debug\hci lab3.exe
+C:\Users\pc\Desktop\ВУЗ\Человеко-компьютерное взаимодействие (1 семестр 2 курс)\hci lab3\hci lab3\obj\Debug\hci lab3.pdb
+C:\Users\pc\Desktop\ВУЗ\Человеко-компьютерное взаимодействие (1 семестр 2 курс)\hci lab3\hci lab3\obj\Debug\hci_lab3.Form2.resources
