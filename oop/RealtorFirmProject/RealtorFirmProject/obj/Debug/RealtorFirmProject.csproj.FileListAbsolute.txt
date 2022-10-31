@@ -1,0 +1,7 @@
+C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\RealtorFirmProject\bin\Debug\RealtorFirmProject.exe.config
+C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\RealtorFirmProject\bin\Debug\RealtorFirmProject.exe
+C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\RealtorFirmProject\bin\Debug\RealtorFirmProject.pdb
+C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\RealtorFirmProject\obj\Debug\RealtorFirmProject.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\RealtorFirmProject\obj\Debug\RealtorFirmProject.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\RealtorFirmProject\obj\Debug\RealtorFirmProject.exe
+C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\RealtorFirmProject\obj\Debug\RealtorFirmProject.pdb
