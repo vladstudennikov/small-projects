@@ -8,7 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    class CustomerServices
+    public class CustomerServices
     {
         private MainDataContext<List<Customer>> _dataContext;
         private List<Customer> listOfCustomers = new List<Customer>();
@@ -19,6 +19,17 @@ namespace BLL
             if (format.ToLower().Equals("xml"))
             {
                 _dataContext.DataProvider = new XMLDataProvider<List<Customer>>();
+            }
+        }
+
+        public void addRequirement(Customer c, List<Filter> f)
+        {
+            for (int i = 0; i < listOfCustomers.Count(); i++)
+            {
+                if (listOfCustomers[i].Equals(c))
+                {
+                    listOfCustomers[i].addReuirements(f);
+                }
             }
         }
 
@@ -93,7 +104,7 @@ namespace BLL
 
         public List<Customer> returnCustomers()
         {
-            return _dataContext.GetData();
+            return listOfCustomers;
         }
 
         public List<Customer> sort(string property)

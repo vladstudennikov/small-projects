@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
+    <Compile Include="Filters.cs" />
     <Compile Include="IDataContext.cs" />
     <Compile Include="IDataProvider.cs" />
     <Compile Include="MainDataContext.cs" />

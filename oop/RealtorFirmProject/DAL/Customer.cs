@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using System.Collections.Generic;
 using System;
 
 namespace DAL
@@ -13,7 +14,31 @@ namespace DAL
 
         private int bankAccountLength = 6;
 
+        private List<Filter> listOfRequirements = new List<Filter>();
+
+        public List<Filter> ListOfRequirements
+        {
+            get => listOfRequirements;
+            set
+            {
+                if (value != null) listOfRequirements = value;
+            }
+        }
+
         public Customer() { }
+
+        public void addReuirements(List<Filter> listOfFilters)
+        {
+            listOfRequirements = listOfFilters;
+        }
+
+        public void addRequirements(Filter[] arrayOfFilters)
+        {
+            foreach (Filter filter in arrayOfFilters)
+            {
+                listOfRequirements.Add(filter);
+            }
+        }
 
         public Customer(string firstName, string lastName, int bankNumber, string email, string number)
         {
@@ -71,6 +96,17 @@ namespace DAL
         public override string ToString()
         {
             return FirstName + ' ' + LastName + ' ' + BankAccountNumber + ' ' + Email + ' ' + Number + ';';
+        }
+
+        public string returnRequirements()
+        {
+            string tmp = "";
+            foreach (Filter f in listOfRequirements)
+            {
+                tmp += f.ToString() + ' ';
+            }
+
+            return tmp;
         }
     }
 }

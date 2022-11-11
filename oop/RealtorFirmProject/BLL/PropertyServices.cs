@@ -8,7 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    class PropertyServices
+    public class PropertyServices
     {
         private MainDataContext<List<Property>> _dataContext;
         private List<Property> listOfProperty = new List<Property>();
@@ -118,7 +118,7 @@ namespace BLL
 
         public List<Property> returnProperty()
         {
-            return _dataContext.GetData();
+            return listOfProperty;
         }
 
         private List<int> getNumberOfBedrooms()
@@ -190,6 +190,27 @@ namespace BLL
                 }
             }
             return newList;
+        }
+
+        public List<Property> findPropertyFromRequirements(Customer customer)
+        {
+            List<int> temporaryList = new List<int>();
+            List<Property> returnList = new List<Property>();
+
+            foreach (Property property in listOfProperty)
+            {
+                foreach (Filter filter in customer.ListOfRequirements)
+                {
+                    if (filter.satisfies(property))  temporaryList.Add(1);
+                }
+
+                if (temporaryList.Count == customer.ListOfRequirements.Count)
+                    returnList.Add(property);
+
+                temporaryList.Clear();
+            }
+
+            return returnList;
         }
     }
 }
