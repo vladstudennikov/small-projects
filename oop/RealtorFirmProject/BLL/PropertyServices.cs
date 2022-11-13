@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Xml;
 
 using DAL;
 
@@ -10,16 +12,22 @@ namespace BLL
 {
     public class PropertyServices
     {
-        private MainDataContext<List<Property>> _dataContext;
+        private MainDataContext<Property> _dataContext;
         private List<Property> listOfProperty = new List<Property>();
+        private string path;
+        private string format;
 
         public PropertyServices(string path, string format)
         {
-            _dataContext = new MainDataContext<List<Property>>(path);
-            if (format.ToLower().Equals("xml"))
+            _dataContext = new MainDataContext<Property>(path);
+            this.path = path;
+            if (format.ToLower().Equals("bin"))
             {
-                _dataContext.DataProvider = new XMLDataProvider<List<Property>>();
+                _dataContext.DataProvider = new BinaryDataProvider<Property>();
+                format = "bin";
             }
+
+            listOfProperty = _dataContext.GetData();
         }
 
         public void addProperty(string typeOfProperty, int quantityOfBedrooms,
@@ -27,13 +35,13 @@ namespace BLL
         {
             Property tmp = new Property(typeOfProperty, quantityOfBedrooms, city, district, isForSale, price);
             listOfProperty.Add(tmp);
-            _dataContext.SetData(listOfProperty);
+            _dataContext.SetData(tmp);
         }
 
         public void addProperty(Property property)
         {
             listOfProperty.Add(property);
-            _dataContext.SetData(listOfProperty);
+            _dataContext.SetData(property);
         }
 
         public List<Property> findProperty(string inputString)
@@ -101,18 +109,38 @@ namespace BLL
             return null;
         }
 
-        public string deleteProperty(string typeOfProperty, int quantityOfBedrooms,
-                                     string city, string district, string isForSale, int price)
+        public void deleteProperty(Property p)
         {
-            Property tmp = findProperty(typeOfProperty, quantityOfBedrooms, city, district, isForSale, price);
-            if (tmp != null)
+            try
             {
-                listOfProperty.Remove(tmp);
-                return "Property was added";
+                int found = 0;
+                List<Property> listProperties = _dataContext.GetData();
+                for (int i = 0; i < listProperties.Count; i++)
+                {
+                    if (listProperties[i].TypeOfProperty.Equals(p.TypeOfProperty) &&
+                        listProperties[i].QuantityOfBedrooms == p.QuantityOfBedrooms &&
+                        listProperties[i].City.Equals(p.City) && listProperties[i].District.Equals(p.District) 
+                        && listProperties[i].IsForSale.Equals(p.IsForSale) && listProperties[i].Price == p.Price)
+                    {
+                        listProperties.RemoveAt(i);
+                        listOfProperty.RemoveAt(i);
+                        found = 1;
+                    }
+                }
+
+                
+                if (found != 0)
+                {
+                    _dataContext.clearFile(_dataContext.Link);
+                    foreach (Property prop in listProperties)
+                    {
+                        _dataContext.SetData(prop);
+                    }
+                }
             }
-            else
+            catch (Exception e)
             {
-                return "Property was not found";
+                throw e;
             }
         }
 

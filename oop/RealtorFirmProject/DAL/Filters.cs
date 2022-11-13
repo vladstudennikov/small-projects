@@ -13,12 +13,14 @@ namespace DAL
     [XmlInclude(typeof(DistrictFilter))]
     [XmlInclude(typeof(PriceFilter))]
     [XmlInclude(typeof(IsForSaleFilter))]
-
+    [Serializable]
     public abstract class Filter
     {
         public abstract bool satisfies(Property p);
         public abstract string ToString();
     }
+
+    [Serializable]
     public class PropertyTypeFilter : Filter
     {
         private string requiredType;
@@ -56,6 +58,7 @@ namespace DAL
         }
     }
 
+    [Serializable]
     public class QuantityOfBedroomsFilter : Filter
     {
         private int requiredQuantityOfBedrooms;
@@ -87,6 +90,7 @@ namespace DAL
         }
     }
 
+    [Serializable]
     public class CityFilter : Filter
     {
         private string requiredCity;
@@ -118,6 +122,7 @@ namespace DAL
         }
     }
 
+    [Serializable]
     public class DistrictFilter : Filter
     {
         private string requiredDistrict;
@@ -148,6 +153,7 @@ namespace DAL
         }
     }
 
+    [Serializable]
     public class PriceFilter : Filter
     {
         private int requiredPrice;
@@ -179,6 +185,7 @@ namespace DAL
         }
     }
 
+    [Serializable]
     public class IsForSaleFilter : Filter
     {
         //if isForSale == true - property is for sale

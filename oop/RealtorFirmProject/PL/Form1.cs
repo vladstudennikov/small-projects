@@ -13,12 +13,12 @@ namespace PL
     public partial class Form1 : Form
     {
         public Menu menu;
-        string propertyDB = @"C:\rieltorFirm\propertydb.xml";
-        string customerDB = @"C:\rieltorFirm\customerdb.xml";
+        string propertyDB = @"C:\rieltorFirm\propertydb.dat";
+        string customerDB = @"C:\rieltorFirm\customerdb.dat";
 
         public Form1()
         {
-            menu = new Menu(customerDB, propertyDB, "xml");
+            menu = new Menu(customerDB, propertyDB, "bin");
             InitializeComponent();
         }
 
@@ -75,7 +75,7 @@ namespace PL
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

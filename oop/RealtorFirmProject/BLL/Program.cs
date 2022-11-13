@@ -12,83 +12,50 @@ namespace BLL
     {
         static void Main(string[] args)
         {
-            string path = @"C:\rieltorFirm\propertydb.xml";
-
-            PropertyServices test = new PropertyServices(path, "xml");
-            Property p1 = new Property("flat", 2, "Kyiv", "Podilskiy", true, 1200000);
-            Property p2 = new Property("flat", 2, "Kyiv", "Pecherskiy", true, 2000000);
-            Property p3 = new Property("flat", 1, "Kyiv", "Podilskiy", true, 1800000);
-            Property p4 = new Property("flat", 1, "Kyiv", "Solomyanskiy", false, 11000);
-            Property p5 = new Property("flat", 3, "Kyiv", "Pecherskiy", false, 20000);
-
-            test.addProperty(p1);
-            test.addProperty(p2);
-            test.addProperty(p3);
-            test.addProperty(p4);
-            test.addProperty(p5);
-
-            foreach (Property pr in test.returnProperty())
-            {
-                Console.WriteLine(pr.ToString());
-            }
-
-            test.deleteProperty("flat", 1, "kyiv", "Podilskiy", "sale", 1800000);
-            test.deleteProperty("flat", 3, "kyiv", "Pecherskiy", "rent", 20000);
-
-            Console.WriteLine();
-            foreach (Property pr in test.returnProperty())
-            {
-                Console.WriteLine(pr.ToString());
-            }
-
-            Console.WriteLine();
-            List<Property> tmp = test.sort("price");
-            foreach (Property pr in tmp)
-            {
-                Console.WriteLine(pr.ToString());
-            }
-
             //working with customers
-            string pathCustomers = @"C:\rieltorFirm\customerdb.xml";
+            //string pathCustomers = @"C:\rieltorFirm\bllcustomertest.dat";
 
-            CustomerServices custLogic = new CustomerServices(pathCustomers, "xml");
-            Customer c1 = new Customer("Ivan", "Petrow", 12345, "petrow@gmail.com", "066-107-45-68");
-            Customer c2 = new Customer("Bogdan", "Ivanov", 65432, "ivanow@gmail.com", "066-456-45-79");
+            //CustomerServices custLogic = new CustomerServices(pathCustomers, "bin");
+            //Customer c1 = new Customer("Ivan", "Petrow", 123456, "petrow@gmail.com", "066-107-45-68");
+            //Customer c2 = new Customer("Bogdan", "Petrow", 123456, "petrow@gmail.com", "066-107-45-68");
 
-            List<Filter> listForc1 = new List<Filter>();
-            listForc1.Add(new QuantityOfBedroomsFilter(2));
+            //custLogic.addCustomer(c1);
+            //custLogic.addCustomer(c2);
 
-            List<Filter> listForc2 = new List<Filter>();
-            listForc2.Add(new QuantityOfBedroomsFilter(2));
-            listForc2.Add(new DistrictFilter("Podilskiy"));
+            //List<Filter> f = new List<Filter>();
+            //f.Add(new CityFilter("kyiv"));
+            //custLogic.addRequirement(c1, f);
 
-            c1.addReuirements(listForc1);
-            c2.addReuirements(listForc2);
+            //List<Customer> l = new List<Customer>();
+            //l = custLogic.returnCustomers();
+            //foreach (Customer c in l)
+            //{
+                //Console.WriteLine(c.ToString() + ' ' + c.returnRequirements());
+            //}
 
-            custLogic.addCustomer(c1);
-            custLogic.addCustomer(c2);
+            //testing properties
+            string pathProperties = @"C:\rieltorFirm\bllpropertiestest.dat";
+            PropertyServices propServ = new PropertyServices(pathProperties, "bin");
+            Property p1 = new Property("flat", 2, "kyiv", "podilskiy", false, 12000);
+            Property p2 = new Property("flat", 2, "kyiv", "podilskiy", false, 12000);
 
-            foreach (Customer c in custLogic.returnCustomers())
+            propServ.addProperty("flat", 2, "kyiv", "podilskiy", false, 12000);
+            propServ.addProperty("flat", 3, "kyiv", "podilskiy", false, 15000);
+
+            List<Property> plist = new List<Property>();
+            plist = propServ.returnProperty();
+            foreach (Property p in plist)
             {
-                Console.WriteLine(c.ToString());
+                Console.WriteLine(p.ToString());
             }
 
-            Console.WriteLine("Filters for c1\n");
-            foreach (Property f in test.findPropertyFromRequirements(c1))
+            propServ.deleteProperty(p1);
+            List<Property> plist1 = new List<Property>();
+            Console.WriteLine();
+            plist1 = propServ.returnProperty();
+            foreach (Property p in plist1)
             {
-                Console.WriteLine(f.ToString());
-            }
-
-            Console.WriteLine("\nFilters for c2\n");
-            foreach (Filter f in c2.ListOfRequirements)
-            {
-                Console.WriteLine(f.ToString());
-            }
-
-            Console.WriteLine("\nFilters for c2\n");
-            foreach (Property f in test.findPropertyFromRequirements(c2))
-            {
-                Console.WriteLine(f.ToString());
+                Console.WriteLine(p.ToString());
             }
         }
     }

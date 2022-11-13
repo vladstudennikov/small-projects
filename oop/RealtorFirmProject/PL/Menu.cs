@@ -25,6 +25,11 @@ namespace PL
             customerServices.addCustomer(fName, lName, bancAccount, email, number);
         }
 
+        public void AddCustomer(Customer c)
+        {
+            customerServices.addCustomer(c);
+        }
+
         public void addRequirements(Customer c, List<Filter> f)
         {
             customerServices.addRequirement(c, f);
@@ -37,10 +42,9 @@ namespace PL
             propertyServices.addProperty(PropType, bedrooms, city, district, forSale, price);
         }
 
-        public void deleteProperty(string typeOfProperty, int quantityOfBedrooms,
-                                  string city, string district, string isForSale, int price)
+        public void deleteProperty(Property p)
         {
-            propertyServices.deleteProperty(typeOfProperty, quantityOfBedrooms, city, district, isForSale, price);
+            propertyServices.deleteProperty(p);
         }
 
         public List<Property> sortProperty(string characteristic)
@@ -53,9 +57,9 @@ namespace PL
             return propertyServices.findPropertyFromRequirements(cust);
         }
 
-        public void deleteCustomer(string firstName, string lastName)
+        public void deleteCustomer(Customer c)
         {
-            customerServices.deleteCustomer(firstName, lastName);
+            customerServices.deleteCustomer(c);
         }
 
         public List<Customer> sortCustomers(string characteristic)

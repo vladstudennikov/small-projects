@@ -58,6 +58,7 @@ namespace PL
             int bank = Convert.ToInt32(bankAccountTextBox.Text);
 
             Customer c = new Customer(name, surname, bank, email, number);
+            List<Filter> tmpList = new List<Filter>();
 
             ListViewItem LVI = new ListViewItem(name + ' ' + surname);
             LVI.Tag = c;
@@ -66,12 +67,16 @@ namespace PL
             {
                 if (listView1.Items[i].Selected)
                 {
+                    tmpList = ((Customer)listView1.Items[i].Tag).ListOfRequirements;
+                    mainForm.menu.deleteCustomer((Customer)listView1.Items[i].Tag);
                     listView1.Items[i].Remove();
+
                 }
             }
 
             listView1.Items.Add(LVI);
-            mainForm.menu.AddCustomer(name, surname, bank, email, number);
+            c.addReuirements(tmpList);
+            mainForm.menu.AddCustomer(c);
             clearFields();
         }
 
@@ -122,12 +127,12 @@ namespace PL
             }
             else
             {
-                mainForm.menu.deleteCustomer(NameTextBox.Text, SurnameTextBox.Text);
                 for (int i = listView1.Items.Count - 1; i >= 0; i--)
                 {
                     if (listView1.Items[i].Selected)
                     {
                         listView1.Items[i].Remove();
+                        mainForm.menu.deleteCustomer((Customer)listView1.Items[i].Tag);
                     }
                 }
             }

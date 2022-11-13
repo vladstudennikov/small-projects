@@ -4,6 +4,7 @@ using System;
 
 namespace DAL
 {
+    [Serializable]
     public class Customer
     {
         private string firstName;

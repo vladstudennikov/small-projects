@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
+    [Serializable]
     public class Property
     {
         private string typeOfProperty;

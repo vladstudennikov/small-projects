@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters;
 
 namespace DAL
 {
@@ -6,31 +9,18 @@ namespace DAL
     {
         public string Link { get; private set; }
         public IDataProvider<T> DataProvider { get; set; }
-        private T _storedData;
+        private List<T> _storedData;
 
         public MainDataContext(string con)
         {
             Link = con;
         }
 
-        public T GetData()
+        public List<T> GetData()
         {
             if (DataProvider != null)
             {
-                if (_storedData != null)
-                    return _storedData;
-                else
-                {
-                    try
-                    {
-                        _storedData = DataProvider.Read(Link);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw ex;
-                    }
-                    return _storedData;
-                }
+                return DataProvider.Read(Link);
             }
             else
                 throw new InvalidOperationException("Data provider is undefined");
@@ -41,10 +31,18 @@ namespace DAL
             if (DataProvider != null)
             {
                 DataProvider.Write(data, Link);
-                _storedData = data;
+                //_storedData = DataProvider.Read(Link);
             }
             else
                 throw new InvalidOperationException("Data provider is undefined");
+        }
+
+        public void clearFile(string filename)
+        {
+            using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+            {
+                fs.SetLength(0);
+            }
         }
     }
 }

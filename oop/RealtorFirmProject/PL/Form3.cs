@@ -94,6 +94,7 @@ namespace PL
             {
                 if (listView1.Items[i].Selected)
                 {
+                    mainForm.menu.deleteProperty((Property)listView1.Items[i].Tag);
                     listView1.Items[i].Remove();
                 }
             }
@@ -103,14 +104,6 @@ namespace PL
 
         private void deleteProperty_Click(object sender, EventArgs e)
         {
-            for (int i = listView1.Items.Count - 1; i >= 0; i--)
-            {
-                if (listView1.Items[i].Selected)
-                {
-                    listView1.Items[i].Remove();
-                }
-            }
-
             string type = propertyTypeFilter.Text;
             string quantityBedrooms = bedroomsFilter.Text;
             string city = cityFilter.Text;
@@ -126,9 +119,15 @@ namespace PL
                 return;
             }
 
-            mainForm.menu.deleteProperty(type, Convert.ToInt32(quantityBedrooms), city, district, forSale, Convert.ToInt32(price));
-        
-            
+            for (int i = listView1.Items.Count - 1; i >= 0; i--)
+            {
+                if (listView1.Items[i].Selected)
+                {
+                    mainForm.menu.deleteProperty((Property)listView1.Items[i].Tag);
+                    listView1.Items[i].Remove();
+                    
+                }
+            }
         }
 
         private void sortButton_Click(object sender, EventArgs e)
@@ -148,7 +147,7 @@ namespace PL
 
                 foreach (Property c in tmpList)
                 {
-                    ListViewItem LVI = new ListViewItem(type + ' ' + quantityBedrooms + ' ' + city + ' ' + forSale);
+                    ListViewItem LVI = new ListViewItem(c.TypeOfProperty + ' ' + c.QuantityOfBedrooms + ' ' + c.City + ' ' + c.IsForSale);
                     LVI.Tag = c;
 
                     listView1.Items.Add(LVI);
@@ -156,13 +155,13 @@ namespace PL
             }
             else if (comboBoxSorting.Text.Equals("price"))
             {
-                List<Property> tmpList = mainForm.menu.sortProperty("pr");
+                List<Property> tmpList = mainForm.menu.sortProperty("price");
 
                 listView1.Clear();
 
                 foreach (Property c in tmpList)
                 {
-                    ListViewItem LVI = new ListViewItem(type + ' ' + quantityBedrooms + ' ' + city + ' ' + forSale);
+                    ListViewItem LVI = new ListViewItem(c.TypeOfProperty + ' ' + c.QuantityOfBedrooms + ' ' + c.City + ' ' + c.IsForSale);
                     LVI.Tag = c;
 
                     listView1.Items.Add(LVI);
@@ -182,7 +181,7 @@ namespace PL
                 Property c = (Property)listView1.SelectedItems[0].Tag;
 
                 propertyTypeFilter.Text = c.TypeOfProperty;
-                bedroomsFilter.Text = Convert.ToString(c.Price);
+                bedroomsFilter.Text = Convert.ToString(c.QuantityOfBedrooms);
                 cityFilter.Text = c.City;
                 districtFilter.Text = c.District;
                 priceFilter.Text = Convert.ToString(c.Price);

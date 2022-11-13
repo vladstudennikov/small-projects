@@ -10,40 +10,70 @@ namespace BLL
 {
     public class CustomerServices
     {
-        private MainDataContext<List<Customer>> _dataContext;
+        private MainDataContext<Customer> _dataContext;
         private List<Customer> listOfCustomers = new List<Customer>();
 
         public CustomerServices(string path, string format)
         {
-            _dataContext = new MainDataContext<List<Customer>>(path);
-            if (format.ToLower().Equals("xml"))
+            _dataContext = new MainDataContext<Customer>(path);
+            if (format.ToLower().Equals("bin"))
             {
-                _dataContext.DataProvider = new XMLDataProvider<List<Customer>>();
+                _dataContext.DataProvider = new BinaryDataProvider<Customer>();
+            }
+
+            listOfCustomers = _dataContext.GetData();
+        }
+
+        public void deleteCustomer(Customer c)
+        {
+            try
+            {
+                int found = 0;
+                List<Customer> listCustomer = _dataContext.GetData();
+                for (int i = 0; i < listCustomer.Count; i++)
+                {
+                    if (listCustomer[i].FirstName.Equals(c.FirstName) && listCustomer[i].LastName.Equals(c.LastName))
+                    {
+                        listCustomer.RemoveAt(i);
+                        listOfCustomers.RemoveAt(i);
+                        found = 1;
+                    }
+                }
+
+                if (found != 0)
+                {
+                    _dataContext.clearFile(_dataContext.Link);
+                    foreach (Customer cust in listCustomer)
+                    {
+                        _dataContext.SetData(cust);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
             }
         }
 
         public void addRequirement(Customer c, List<Filter> f)
         {
-            for (int i = 0; i < listOfCustomers.Count(); i++)
-            {
-                if (listOfCustomers[i].Equals(c))
-                {
-                    listOfCustomers[i].addReuirements(f);
-                }
-            }
+            listOfCustomers = _dataContext.GetData();
+            deleteCustomer(c);
+            c.addReuirements(f);
+            _dataContext.SetData(c);
         }
 
         public void addCustomer(string firstName, string lastName, int bankAccount, string email, string number)
         {
             Customer tmp = new Customer(firstName, lastName, bankAccount, email, number);
             listOfCustomers.Add(tmp);
-            _dataContext.SetData(listOfCustomers);
+            _dataContext.SetData(tmp);
         }
 
         public void addCustomer(Customer customer)
         {
             listOfCustomers.Add(customer);
-            _dataContext.SetData(listOfCustomers);
+            _dataContext.SetData(customer);
         }
 
         //finding by first name and last name
@@ -88,23 +118,9 @@ namespace BLL
             return foundCustomers;
         }
 
-        public string deleteCustomer(string firstName, string lastName)
-        {
-            try
-            {
-                Customer tmp = findCustomer(firstName, lastName);
-                listOfCustomers.Remove(tmp);
-                return "Customer was deleted";
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public List<Customer> returnCustomers()
         {
-            return listOfCustomers;
+            return _dataContext.GetData();
         }
 
         public List<Customer> sort(string property)
