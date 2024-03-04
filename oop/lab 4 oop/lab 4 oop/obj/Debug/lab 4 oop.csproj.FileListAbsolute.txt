@@ -1,7 +1,0 @@
-C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\lab 4 oop\lab 4 oop\bin\Debug\lab 4 oop.exe.config
-C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\lab 4 oop\lab 4 oop\bin\Debug\lab 4 oop.exe
-C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\lab 4 oop\lab 4 oop\bin\Debug\lab 4 oop.pdb
-C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\lab 4 oop\lab 4 oop\obj\Debug\lab 4 oop.csproj.AssemblyReference.cache
-C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\lab 4 oop\lab 4 oop\obj\Debug\lab 4 oop.csproj.CoreCompileInputs.cache
-C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\lab 4 oop\lab 4 oop\obj\Debug\lab 4 oop.exe
-C:\Users\pc\Desktop\ВУЗ\Лабы C# (1 семестр 2 курс)\lab 4 oop\lab 4 oop\obj\Debug\lab 4 oop.pdb

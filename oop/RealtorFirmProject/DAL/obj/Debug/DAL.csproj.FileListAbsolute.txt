@@ -1,7 +1,0 @@
-C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\DAL\bin\Debug\DAL.exe.config
-C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\DAL\bin\Debug\DAL.exe
-C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\DAL\bin\Debug\DAL.pdb
-C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
-C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\DAL\obj\Debug\DAL.exe
-C:\Users\pc\Desktop\ВУЗ\Курсовая (1 семестр 2 курс)\RealtorFirmProject\DAL\obj\Debug\DAL.pdb
