@@ -41,7 +41,13 @@ public:
         return pos;
     }
 
-    void add(Cell x) { q.push_back(x); }
+    void add(Cell x) {
+        for (int i = 0; i < q.size(); ++i) {
+            if (q[i].X() == x.X() && q[i].Y() == x.Y()) { return; }
+        }
+        q.push_back(x);
+    }
+
     Cell pop(vector<vector<bool>>& visited, vector<vector<int>>& m) {
         int d = INT_MAX;
         int idx = -1;
