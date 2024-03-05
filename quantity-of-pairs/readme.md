@@ -4,7 +4,7 @@ Calculate how many pairs ($x_1, x_2, x_3, x_4$) exist such as $x_1 + x_2 + x_3 +
 
 ### Solution
 Let we have some number of pairs ($x_1, x_2, x_3, x_4$), sum of all elements in each pair equals to k. 
-Divide pair of 4 elements into 2 pairs: $(x_1, x_2)$ and $(x_3, x_4)$. Let $S_1 = x_1 + x_2$, $S_2 = x_3 + x_4$. Obviously that $S_1 + S_2 = k$, so our task could be simplified: we should choose 2 numbers $S_1 and S_2$ with some equals k. 
+Divide pair of 4 elements into 2 pairs: $(x_1, x_2)$ and $(x_3, x_4)$. Let $S_1 = x_1 + x_2$, $S_2 = x_3 + x_4$. Obviously that $S_1 + S_2 = k$, so our task could be simplified: we should calculate, how many pairs of numbers $S_1$ and $S_2$ with sum = k exists, and then calculate, in how many ways numbers $S_1$ and $S_2$ could be formed from other natural numbers.
 If $S_1 = a$, then $S_2 = k - a$. Number of pairs $(x_1, x_2)$ such that $x_1 + x_2$ = a equals to a + 1, so:
 
 ![image](https://github.com/vladstudennikov/cpp-projects/assets/91913216/b43ad2ff-cbab-495d-9e17-c5186af6cc70)
