@@ -11,6 +11,7 @@ If $S_1 = a$, then $S_2 = k - a$. Number of pairs $(x_1, x_2)$ such that $x_1 + 
 
 ![image](https://github.com/vladstudennikov/cpp-projects/assets/91913216/424dedd2-aa20-4f67-b912-a2fbc9b1b86e)
 
-Conclusion: for fixed number $S_1 = a$ there are (a + 1)(k - a + 1) variants to choose 2 pairs of numbers with sum of all elements equals to k. But "a" could be any number from 0 to k, so using combinatoric laws we can get next formula for calculating number of all pairs ($x_1, x_2, x_3, x_4$) with sum = k:
+Conclusion: for fixed number $S_1 = a$ there are (a + 1)(k - a + 1) variants to choose 2 pairs of numbers with sum of all elements equals to k. But "a" could be any number from 0 to k, so using combinatoric laws we can get next formula for calculating  the number of all pairs ($x_1, x_2, x_3, x_4$) with sum = k:
+
 ![image](https://github.com/vladstudennikov/cpp-projects/assets/91913216/414bfd38-588e-441d-9010-58b71d0b354c)
 
