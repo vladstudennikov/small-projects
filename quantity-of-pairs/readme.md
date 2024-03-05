@@ -3,7 +3,7 @@ Given 4 natural numbers: $x_1, x_2, x_3, x_4$;
 Calculate how many pairs ($x_1, x_2, x_3, x_4$) exist such as $x_1 + x_2 + x_3 + x_4 = k$, where k - any natural number;
 
 ### Solution
-Let we have some number of pairs ($x_1, x_2, x_3, x_4$), where sum of each elements equals to k. 
+Let we have some number of pairs ($x_1, x_2, x_3, x_4$), sum of all elements in each pair equals to k. 
 Divide pair of 4 elements into 2 pairs: $(x_1, x_2)$ and $(x_3, x_4)$. Let $S_1 = x_1 + x_2$, $S_2 = x_3 + x_4$. Obviously that $S_1 + S_2 = k$, so our task could be simplified: we should choose 2 numbers $S_1 and S_2$ with some equals k. 
 If $S_1 = a$, then $S_2 = k - a$. Number of pairs $(x_1, x_2)$ such that $x_1 + x_2$ = a equals to a + 1, so:
 
