@@ -1,7 +1,5 @@
-### Description:
-Given 4 natural numbers: $x_1, x_2, x_3, x_4$;
-
 ### Task:
+Given 4 natural numbers: $x_1, x_2, x_3, x_4$;
 Calculate how many pairs ($x_1, x_2, x_3, x_4$) exist such as $x_1 + x_2 + x_3 + x_4 = k$, where k - any natural number;
 
 ### Solution
