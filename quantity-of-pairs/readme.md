@@ -7,7 +7,7 @@ Calculate number of pairs ($x_1, x_2, x_3, x_4$) exist such as $x_1 + x_2 + x_3 
 ### Solution
 Let we have some number of pairs ($x_1, x_2, x_3, x_4$). 
 Divide pair of 4 elements into 2 pairs: $(x_1, x_2)$ and $(x_3, x_4)$. Let $N_1$ - number of pairs $(x_1, x_2)$, $N_2$ - number of pairs $(x_3, x_4)$. Let $S_1 = x_1 + x_2$, $S_2 = x_3 + x_4$. Then our task could be simplified - we should choose such $S_1$ and $S_2$, that $S_1 + S_2 = k$. 
-If $S_1 = a$, then $S_2 = k - a$. Number of pairs $(x_1, x_2)$ such that $x_1 + x_2 = a is a + 1, so:
+If $S_1 = a$, then $S_2 = k - a$. Number of pairs $(x_1, x_2)$ such that $x_1 + x_2$ = a is a + 1, so:
 
 ![image](https://github.com/vladstudennikov/cpp-projects/assets/91913216/b43ad2ff-cbab-495d-9e17-c5186af6cc70)
 
